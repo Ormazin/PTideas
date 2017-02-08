@@ -10,6 +10,69 @@
 			  src: url(fonts/Changa-Light.ttf);
 			  }
 			  
+			  .cssload-container{
+	display: block;
+	margin:21px auto;
+	margin-top:40px;
+	width:42px;
+}
+
+.cssload-loading i{
+	width: 21px;
+	height: 21px;
+	display: inline-block;
+	background: rgb(255,89,84);
+	border-radius: 50%;
+}
+.cssload-loading i:nth-child(1){
+	animation:cssload-loading-ani1 0.7s ease-in-out infinite;
+		-o-animation:cssload-loading-ani1 0.7s ease-in-out infinite;
+		-ms-animation:cssload-loading-ani1 0.7s ease-in-out infinite;
+		-webkit-animation:cssload-loading-ani1 0.7s ease-in-out infinite;
+		-moz-animation:cssload-loading-ani1 0.7s ease-in-out infinite;
+
+}
+.cssload-loading i:nth-child(2){
+	background: rgb(58,186,165);
+	margin-left: -4px;
+	animation:cssload-loading-ani1 0.7s ease-in-out 0.345s infinite;
+		-o-animation:cssload-loading-ani1 0.7s ease-in-out 0.345s infinite;
+		-ms-animation:cssload-loading-ani1 0.7s ease-in-out 0.345s infinite;
+		-webkit-animation:cssload-loading-ani1 0.7s ease-in-out 0.345s infinite;
+		-moz-animation:cssload-loading-ani1 0.7s ease-in-out 0.345s infinite;
+}
+
+
+@keyframes cssload-loading-ani1{
+	70%{
+		transform:scale(0.5);
+	}
+}
+
+@-o-keyframes cssload-loading-ani1{
+	70%{
+		-o-transform:scale(0.5);
+	}
+}
+
+@-ms-keyframes cssload-loading-ani1{
+	70%{
+		-ms-transform:scale(0.5);
+	}
+}
+
+@-webkit-keyframes cssload-loading-ani1{
+	70%{
+		-webkit-transform:scale(0.5);
+	}
+}
+
+@-moz-keyframes cssload-loading-ani1{
+	70%{
+		-moz-transform:scale(0.5);
+	}
+}
+			  
 			  
 			  /************ Main *************/
 			  *{
@@ -26,7 +89,7 @@
 			  a{ color: inherit; text-decoration: none;} 
 			  
 			  html{height:100%;}
-			  
+			   img{ max-width: 250px; max-height:300px; background:#CCC;  }
 			  body{
 			  background: linear-gradient( 120deg,#fff, #fff);
 			  -webkit-touch-callout: none;   -webkit-text-size-adjust: none;    -webkit-user-select: none; 
@@ -58,7 +121,7 @@
  			  
 			  #cover{  }
 			  
-			  .loading-body{ width:100%; height:100%; position: fixed;  top:0px; right:0px; z-index:505;  display: none; } 
+			  .loading-body{ width:100%; height:100%; position: fixed;  top:0px; right:0px; z-index:505;   display: none; } 
 			  .loading-box{
 			   width:100px; height:100px; background-color:#FFF; 
 			   position:absolute; top:calc(50% - 50px);right:calc(50% - 50px);
@@ -146,23 +209,32 @@
 			  
 			  /********* show articles **********/
 			  .articles_info_box{
-			   width:100%; height:150px;
+			   width:100%; height:120px;
 			   position:fixed; top:-180px; z-index:3;
 			   background-color: #e74c3c;
 			   color:#FFF; 
 			   }
-			   .articles_info_title{ font-size:22px; }
+			   .articles_info_title{ font-size:18px; }
 			   .articles_info_back{ font-size:35px; font-weight:900; }
-			   .articles_info_box td{ padding:15px;}
-			   .articles_fullcontent{
-			   width:90%; height:calc(100% - 215px); overflow-x:auto ;  overflow-y: scroll;  -webkit-overflow-scrolling: touch;
-			   padding:5%;
-			   position:absolute; top:500px;  
+			   .articles_info_box td{ padding-right: 15px; padding-left: 15px;}
+			   
+			   .articles_fullcontent_body{
+			   width:90%; height:calc(100% - 190px); overflow-x: hidden  ;  overflow-y: scroll;  -webkit-overflow-scrolling: touch;
+			   padding:5%; direction:ltr;   
+			   position:absolute; top:150px;  text-align:center;
 			   text-align:justify ; font-size:19px;
 			   opacity:0; z-index:2;
 			   background: #FFF;
 			   }
+			   .articles_fullcontent{
+			   text-align: justify;
+			   width:90%;
+			   direction:ltr;
+			   padding:10px;
+			   position:absolute; left:0px;
+			   }
 			  
+ 			  
 			  
 			  
 			  /************ about *************/
@@ -170,6 +242,7 @@
 			  width:100%; height:calc(100% - 140px ); 
 			  position:absolute; top:75px;  
 			  overflow-y: scroll;  -webkit-overflow-scrolling: touch; 
+			  opacity:0;
 			  } 
 			  #about_logo{ width:255px; height:105px; background-image:  url(../img/about_logo.png); background-size:255px 105px; }
 			  .about_line{ width:100%; height:1px; border-bottom: 1px dashed rgba(255,255,255,0.5); margin-top:15px; margin-bottom:15px;}
@@ -186,7 +259,7 @@
 			  }
 			  .ideas_content{ margin-bottom:150px;}
 			  .ideas_title{ font-size:25px; color: #FC0; display:block;}
-			  .ideas_text{ font-size:17px; text-align:justify}
+			  .ideas_text{ font-size:17px; text-align:justify; }
 			  .ideas_line{
 			   width:90%; height:1px; 
 			   background: #1e2f3f; border-bottom:1px solid #15202a; 

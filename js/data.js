@@ -66,8 +66,7 @@
 			  success: (function(data){
 			  
 			  $(".articles_fullcontent").html( data[0].content );
-			  $( ".articles_fullcontent" ).scrollTop(0);
-			  $( ".articles_fullcontent" ).scrollLeft( 1000 );
+			  $( ".articles_fullcontent_body" ).scrollTop(0);
 			  
 			  animate.loading_out();
 			  
@@ -90,19 +89,41 @@
 			  /***************** دالة جلب قائمة الموضوعات *****************/
 			  ideas:(function( type ){
 			  
+			  
+			  animate.loading_in();
+			  
+ 			  $.ajax({
+			  url: "https://pt-ideas.com/appsql/ideas.php?type=" + type  , 
+ 			  type: 'GET',
+			  crossDomain: true,
+			  dataType: 'json',
+			  success: (function(data){
+			  
+			  $(".body_content_lists").html('<br>');
+			  $(".body_content_lists" ).scrollTop(0);
+			  
+			   /* for(1) */
+			  for( var i=0; i < data.length; i++ ){
+				  
+ 			  $(".body_content_lists").append('<table class="ideas_lists"> <tr> <td align="right" width="80%"> <span class="ideas_title">'+data[i].title+'</span> <span class="ideas_text"> '+data[i].content+'</span> </td> </tr> </table><div class="ideas_line"></div>'); /*end html*/
+			  
+			  
 
-			  /* عملية استدعاء الجسون الخاص بالنوع على هيئة نص */
-			  var json = $.ajax({
-			  url: "http://192.168.1.3/Bus%20Projects/PTideas%20SQL/content.php?type="+type , 
-			  dataType:"json",
-			  type: "GET",
-			  async:false
+			  
+ 			  
+			  } /* end for(1) */
+			 
+			 
+			  animate.loading_out();
+			  setTimeout(function(){animate.list_in();},500);
+			  
+			  }) /* end success */
+			  
+			  
 			  });/* End Ajax */
 			  
 			  
-			   /* تحويل نص الجسون إلى جسون حقيقي واسناده بمتغير */
-			  var data =  jQuery.parseJSON( json.responseText );
- 			  return data;
+ 
 			  
 			  }) /* End Ideas Function */
 			  

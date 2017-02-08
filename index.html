@@ -21,6 +21,8 @@
               <link rel="stylesheet" type="text/css" href="css/ti.css">
               <link rel="stylesheet" type="text/css" href="css/social_media.css">
               <link rel="stylesheet" type="text/css" id="css_style" href="css/style.css">
+              <link rel="stylesheet" type="text/css" id="android_style" href="">
+              
               <link rel="stylesheet" type="text/css" href="css/animate.css">
               
               
@@ -28,10 +30,35 @@
               <!-------- JavaScript ------->
               <script src="js/jquery3.js"></script>
               <script src="js/jmobile.js"></script>
-             <script src="js/data.js"></script>
+              <script src="js/data.js"></script>
               <script src="js/move.js"></script>
               <script src="js/animate.js"></script>
               <script src="js/apply.js"></script>
+              
+                
+              <script>
+			    
+			  /* if(1) - إذا كان اندرويد */
+			  
+			  var device = window.navigator.userAgent ;
+			  if( device.indexOf("Linux") != -1 ){
+			  
+			  $("#android_style").attr("href", "css/android_style.css");
+			   /**********************دخول  معلومات محتوى الموضوع *********************/  
+			  animate.content_info_in = (function(){
+			  $('.articles_info_box').css({"top":"0px","transition":"top 500ms"}); 
+			  });
+			  
+			  /***************************خروج معلومات محتوى الموضوع******************/  
+			  animate.content_info_out = (function(){
+			  $('.articles_info_box').css({"top":"-160px","transition":"top 500ms"});  
+			  });
+			  
+			  
+			  }/*end if(1)*/
+               
+              </script>
+              
               
               
               
@@ -88,12 +115,7 @@
               
          
          
-              
-              <script>
-			    
-			    
-               
-              </script>
+            
               </div>
               
               

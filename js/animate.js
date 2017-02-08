@@ -75,6 +75,7 @@
 			  $('#back-group-box').css("box-shadow", "0px -15px 15px 5px "  + this.color );
 			  $('.content_title_lists_word').text(title);
 			  $('.content_title_lists_word').css("color", this.color );
+			  $('.articles_info_box').css("background-color", this.color );
 
 			  
 			    
@@ -83,12 +84,12 @@
 			  /************************** دخول التحميل *************************/  
 			  loading_in:(function(){
 			  $(".loading-body").show();	  
-			  Move(".loading-box").To({"opacity":"1"});
+			  Move(".loading-box").To({"transition":"opacity 500ms", "opacity":"1"});
 			  }),
 			  
 			  /**************************** خروج التحميل ***********************/  
 			  loading_out:(function(){
-			  Move(".loading-box").To({"opacity":"0"});
+			  Move(".loading-box").To({"opacity":"0","transition":"opacity 500ms"});
 			  setTimeout(function(){ $(".loading-body").hide();},500);	  
 			  }),
 			  
@@ -151,21 +152,21 @@
 			  
 			  /***************************دخول محتوى الموضوع ************************/  
 			  content_data_in:(function(){
-			  $('.articles_fullcontent').css({"opacity":"1", "top":"180px","transition":"opacity 500ms, top 500ms"});
+			  $('.articles_fullcontent_body').css({"opacity":"1", "top":"150px","transition":"opacity 500ms, top 500ms"});
 			  }),
 			  
 			  /***************************خروج محتوى الموضوع************************/  
 			  content_data_out:(function(){
-			  $('.articles_fullcontent').css({"opacity":"0", "top":"500px","transition":"opacity 500ms, top 500ms"}); 
+			  $('.articles_fullcontent_body').css({"opacity":"0", "top":"150px","transition":"opacity 500ms, top 500ms"}); 
 			  }),
 			  
 			 
 			  /*************************** تجميع جميع حركات دخول صفحة القوائم  ************************/  
 			  list_page_in:(function(){
-			  animate.listTitle_content_out();
-			  animate.list_in();
-			  setTimeout(function(){$('#back-group-box').css("display","block");},200);
-			  $('body').css("background-color", animate.color );
+			  animate.listTitle_content_out(); 
+			   
+			  setTimeout(function(){$('#back-group-box').css("display","block"); animate.list_in(); },1000);
+			  $('body').css({"background-color":animate.color , "transition":"background-color 500ms"  });
 			  }),
 			  
 			  /*************************** تجميع جميع حركات خروج صفحة القوائم ************************/  
@@ -187,6 +188,18 @@
 			  show_page_out:(function(){
 			  animate.content_data_out();
 			  animate.content_info_out();
+			  }),
+			  
+			  
+			  
+			  /*************************** دخول عن التطبيق  ************************/  
+			  about_in:(function(){
+			   $(".body_content_lists_about").css({"opacity":"1" , "transition":"opacity 1000ms"  }); 
+			  }),
+			  
+			  /*************************** خروج عن التطبيق  ************************/  
+			  about_out:(function(){
+			   $(".body_content_lists_about").css({"opacity":"0" , "transition":"opacity 1000ms"  }); 
 			  }),
 			  
 			  

@@ -24,7 +24,7 @@
 			  
 			  switch( data.content_type ){
 			  
-			  case "items": number = 11;
+			  case "items": number = 1;
 			  break;
 			  
 			  case "versions": number = 10;
@@ -35,12 +35,20 @@
 			  
 			  }
 			  
+			  
+			  animate.loading_in();
+			  animate.page_in();
+			  
+			  
+			  setTimeout((function(){
+			  
 			  data.list( number );
 			  
+              animate.list_page_in();
 			  
+			  }),1000);
 			  
-			  animate.page_in();
-animate.list_page_in();			  
+			  			  
 			  }),
 			  
 			  end: (function(){
@@ -73,8 +81,9 @@ animate.list_page_in();
 			  
 			  end: (function(){
 			  
-			  animate.page_out();
+			  
 			  animate.show_page_out();
+			  setTimeout(function(){animate.page_out();},1000);
 			  
 			  })
 			  

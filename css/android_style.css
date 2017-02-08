@@ -1,0 +1,7 @@
+#battery{ width:0px; height:0px; display:none;}
+ #button-list-articles{ background-color:#e74c3c; top:0px; right:0%; }
+			  #button-list-versions{ background-color:#f39c12; top:0px; right:50%; }
+			  #button-list-logo{ background-color:#e6ebec; top:25%; right:-50%; width:200%; }
+			  #button-list-competent{ background-color:#0db392; top:50%; right:0%; }
+			  #button-list-about{ background-color:#2ecc71; top:50%; right:50%; }
+			  #button-list-ideas{ background-color:#1c2834; top:75%; right:-50%;  width:200%;}

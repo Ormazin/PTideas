@@ -6,12 +6,12 @@
 			  /** سيبدأ التنفيذ عند تحميل جميع الصفحات **/
 			  mobile.ready( (function(){
 				  
-				  
- 		   
-			  
+				   
+ 		    
+
 			  
 			  /************************** عند تغيير القروب ************************/
-			  $(document.body).on( "touchend", ".change_group", function( group ){
+			  $(document.body).on( "touchstart", ".change_group", function( group ){
 			 
 			  /* if(1) التأكد بأن القروب المطلوب ليس نفس القروب الحالي*/
 			  if( Group.pres != $(this).attr("data-group_id") ){
@@ -29,7 +29,7 @@
 			  
 			  /************************** عند تغيير صفحة ************************/
 			  
-			  $(document.body).on( "touchend", ".change_page", function ( page ){
+			  $(document.body).on( "touchstart", ".change_page", function ( page ){
 			  
  			  var page = Page.data[ $(this).attr("data-page_id") ];
 			  
