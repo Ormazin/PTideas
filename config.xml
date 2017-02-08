@@ -12,11 +12,9 @@
     <preference name="android-minSdkVersion" value="14" />
 
  
-<gap:plugin name="org.apache.cordova.console" />
-<gap:plugin name="org.apache.cordova.device" />
-<gap:plugin name="org.apache.cordova.geolocation" />
+ 
 <gap:plugin name="org.apache.cordova.network-information" />
-<gap:plugin name="org.apache.cordova.splashscreen" />
+ 
 
 
 
