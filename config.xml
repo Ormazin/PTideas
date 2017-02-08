@@ -11,10 +11,6 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
 
- 
- 
-<gap:plugin name="org.apache.cordova.network-information" />
- 
 
 
 
