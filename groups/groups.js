@@ -11,6 +11,7 @@
 			  start: (function(){
 			  
 			  animate.group_in();
+			  animate.page_color("#dceff5");
 			 
  
 			  }),
@@ -26,7 +27,7 @@
 			  });
 			  
 			  
-			  /******************** فروب الموضوعات ********************/
+			  /******************** فروب المعلومات ********************/
 			  
 			  Group.create({
 			  
@@ -35,24 +36,9 @@
 			  
 			  start: (function(){
 			  
-			  var  number ;
 			  
-			  
-			  switch( data.content_type ){
-			  
-			  case "items": number = 1;
-			  break;
-			  
-			  case "versions": number = 10;
-			  break;
-			  
-			  case "competent": number = 82;
-			  break;
-			  
-			  }
-			  
-			  setTimeout(function(){data.list( number );},700);
 			  animate.group_in();
+			  animate.page_color("#2ecc71");
  
 			  }),
 			  
@@ -60,14 +46,101 @@
 			  end: (function(){
 			  
 			  animate.group_out();
-			  animate.list_out();
 			  
 			  }) 
 			  
 			  });
 			  
 			  
-			  /******************** فروب معلومات التطبيق ********************/
+			  /******************** فروب الفيديو ********************/
+			  
+			  Group.create({
+			  
+			  id   : "video",
+			  first: false  ,
+			  
+			  start: (function(){
+			  
+			  animate.group_in();
+			  animate.page_color("#df624c");
+  
+			  }),
+			  
+			  
+			  end: (function(){
+ 			  animate.group_out();
+			  
+			  }) 
+			  
+			  });
+			  
+			  /******************** فروب الاستشارات ********************/
+			  
+			  Group.create({
+			  
+			  id   : "consult",
+			  first: false  ,
+			  
+			  start: (function(){
+			  
+			  animate.group_in();
+			  animate.page_color("#f39c12");
+  
+			  }),
+			  
+			  
+			  end: (function(){
+ 			  animate.group_out();
+			  
+			  }) 
+			  
+			  });
+			  
+			  /******************** فروب احجز موعدك ********************/
+			  
+			  Group.create({
+			  
+			  id   : "appbook",
+			  first: false  ,
+			  
+			  start: (function(){
+			  
+			  animate.group_in();
+			  animate.page_color("#4a4a4a");
+  
+			  }),
+			  
+			  
+			  end: (function(){
+ 			  animate.group_out();
+			  
+			  }) 
+			  
+			  });
+			  
+			  /******************** فروب ذكرني ********************/
+			  
+			  Group.create({
+			  
+			  id   : "remind",
+			  first: false  ,
+			  
+			  start: (function(){
+			  
+			  animate.group_in();
+			  animate.page_color("#1abc9c");
+  
+			  }),
+			  
+			  
+			  end: (function(){
+ 			  animate.group_out();
+			  
+			  }) 
+			  
+			  });
+			  
+			  /******************** فروب من نحن ********************/
 			  
 			  Group.create({
 			  
@@ -77,39 +150,16 @@
 			  start: (function(){
 			  
 			  animate.group_in();
-			  setTimeout(function(){ animate.about_in(); },600);
- 
+			  animate.page_color("#2c3e50");
+  
 			  }),
 			  
 			  
 			  end: (function(){
-			  animate.about_out();
-			  animate.group_out();
+ 			  animate.group_out();
 			  
 			  }) 
 			  
 			  });
 			  
-			  /******************** فروب الأفكار ********************/
-			  
-			  Group.create({
-			  
-			  id   : "ideas",
-			  first: false  ,
-			  
-			  start: (function(){
-			  
-			  setTimeout(function(){data.ideas( 125 );},700);
-			  animate.group_in();
- 
-			  }),
-			  
-			  
-			  end: (function(){
-			  
-			  animate.group_out();
-			  animate.list_out();
-			  
-			  }) 
-			  
-			  });
+		 

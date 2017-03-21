@@ -5,56 +5,52 @@
 			  
 			  
 			  
-			  /******* إنشاء صفحة الموضوعات  *******/
+			  /******* إنشاء صفحة أقسام الموضوعات  *******/
 			  Page.create({
 			  
-			  id   : "articles_list",
-			  view: "pages/view/articles/articles_list.html",
-			  title: " قائمة الموضوعات ",
+			  id   : "articles_main",
+			  view: "pages/view/articles/articles_main.html",
+			  title: " اختر القسم ",
 			  first: true,
 			  father: false,
 			  group: "articles",
 			  
 			  start: (function(){	
-			  
-			  
-			  
-			   var  number ;
-			  
-			  
-			  switch( data.content_type ){
-			  
-			  case "items": number = 1;
-			  break;
-			  
-			  case "versions": number = 10;
-			  break;
-			  
-			  case "competent": number = 82;
-			  break;
-			  
-			  }
-			  
-			  
-			  animate.loading_in();
+			
 			  animate.page_in();
-			  
-			  
-			  setTimeout((function(){
-			  
-			  data.list( number );
-			  
-              animate.list_page_in();
-			  
-			  }),1000);
-			  
-			  			  
+			  animate.page_color( "#2ecc71" );
+		
 			  }),
 			  
 			  end: (function(){
 			  
 			  animate.page_out();
-			  animate.list_page_out();
+			  
+			  })
+			  
+			  });
+			  
+			  
+			  /******* إنشاء صفحة قائمة الموضوعات  *******/
+			  Page.create({
+			  
+			  id   : "articles_list",
+			  view: "pages/view/articles/articles_list.html",
+			  title: " قائمة الموضوعات ",
+			  first: false,
+			  father: "articles_main",
+			  group: "articles",
+			  
+			  start: (function(){	
+			  
+			  animate.page_in();
+			  animate.page_color( animate.articles_color );
+   			  
+			  }),
+			  
+			  end: (function(){
+			  
+			  animate.page_out();
 			  
 			  })
 			  
@@ -75,15 +71,12 @@
 			  start: (function(){	
 			  
 			  animate.page_in();
-			  setTimeout(function(){ data.content(); } ,1000);
- 			  
+  			  
 			  }),
 			  
 			  end: (function(){
 			  
-			  
-			  animate.show_page_out();
-			  setTimeout(function(){animate.page_out();},1000);
+			  animate.page_out();
 			  
 			  })
 			  

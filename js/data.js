@@ -35,6 +35,15 @@
 			  animate.loading_out();
 			  setTimeout(function(){animate.list_in();},500);
 			  
+			  }),
+			  error: (function(){
+			  
+			  
+			  alert("لا يوجد اتصال بالانترنت");
+			  animate.loading_out();
+			  setTimeout(function(){animate.list_in();},500);
+			  
+			  
 			  }) /* end success */
 			  
 			  

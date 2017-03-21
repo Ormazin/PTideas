@@ -3,7 +3,7 @@
               <head>
               <meta charset="utf-8">
               
-              <title>أفكار تعطي حياة</title>
+              <title>ابتسامة طفلك</title>
               
               
               <!----------- Meta ---------->
@@ -29,6 +29,7 @@
               
               <!-------- JavaScript ------->
               <script src="js/jquery3.js"></script>
+              <script src="js/fastclick.js"></script>
               <script src="js/jmobile.js"></script>
               <script src="js/data.js"></script>
               <script src="js/move.js"></script>
@@ -56,6 +57,10 @@
 			  
 			  
 			  }/*end if(1)*/
+			  
+			  window.addEventListener('load', function() {
+			  new FastClick(document.body);
+			  }, false);
                
               </script>
               
@@ -74,18 +79,19 @@
               <!---------- Master --------->
               <div id="master"></div>
               <div id="battery"></div>
+              <div id="cover"></div>
               
+            
+            
               
-              <!---------- back-group-button --------->
-              <div id="back-group-box">
-              <div class="change_group center" data-group_id="home"  data-groupType="home" ><span class="lnr lnr-chevron-left" id="back-group-button"></span></div>
+              <!---------- Loading --------->
+              <div class="loading-body">
+              <div class="loading-box"> <img src="img/loading.gif" > </div>
               </div>
               
               
               <!---------- Loading --------->
-              <div class="loading-body">
-              <div class="loading-box"> <img src="img/loading.gif" /> </div>
-              </div>
+              <div id="upcolors"></div>
               
               
                 
@@ -95,10 +101,14 @@
               
               <!---------- Pages --------->
               <script src="pages/js/home.js"></script>
-              <script src="pages/js/articles.js"></script>
+              <script src="pages/js/video.js"></script>
+              <script src="pages/js/consult.js"></script>
+              <script src="pages/js/appbook.js"></script>
+              <script src="pages/js/remind.js"></script>
               <script src="pages/js/about.js"></script>
-              <script src="pages/js/ideas.js"></script>
-              
+                            <script src="pages/js/articles.js"></script>
+
+               
               
                
               

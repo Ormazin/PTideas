@@ -81,20 +81,26 @@
 			  padding:0px; margin:0px;   
 			  -webkit-appearance: none; -moz-appearance: none; appearance: none;
 			  -webkit-tap-highlight-color: rgba(0,0,0,0);
-			  font-family: Myriad; 
-			  font-weight:100;
+ 			  font-weight:100;
+			  font-family:Myriad;
 			  text-shadow: 0px 1px rgba(0,0,0,0.2);
+			   
  			  }
 			  
 			  a{ color: inherit; text-decoration: none;} 
 			  
 			  html{height:100%;}
-			   img{ max-width: 250px; max-height:300px; background:#CCC;  }
+			  img{ max-width: 250px; max-height:300px; background:#CCC;  }
 			  body{
-			  background: linear-gradient( 120deg,#fff, #fff);
+			  background-image:  url(../img/background.png);
+			  background-size: cover;
+			  background-position:center;
+			  background-color: #dceff5;
+			  text-align:center;
+			  
+			  
 			  -webkit-touch-callout: none;   -webkit-text-size-adjust: none;    -webkit-user-select: none; 
-			  font-family: Myriad;
-			  }
+ 			  }
 			  
 			  .center{  display:table; position:relative; transform: translateY(-50%); top:50%;}
 			  
@@ -112,14 +118,14 @@
 			   
 			  }
 			  
-			  #battery{ background: #fff; width:100%; height:20px; position:fixed; top:0px; left:0px; }
+			  #battery{  width:100%; height:20px; position:fixed; top:0px; left:0px;   }
 			  
 			  .group{width:100%; height: calc( 100% - 2px); position: absolute;  top:0px; right:0px; display:none;   }
 			  .page{ width:100%; height: calc( 100% - 3px);  position: absolute; top:0px; right:0px; opacity:0;   }
 			  .first_group{ display: block; z-index:99; }
 			  .first_page{ opacity:1; z-index:99;   }
  			  
-			  #cover{  }
+			   #cover{ width:100%; height:100%; position:fixed; top:0px; right:0px; z-index:10000; display:none;   }
 			  
 			  .loading-body{ width:100%; height:100%; position: fixed;  top:0px; right:0px; z-index:505;   display: none; } 
 			  .loading-box{
@@ -131,100 +137,152 @@
 			    }
 			  .loading-box img{ height:70px; margin-top:15px;  } 
 			  
+			  #upcolors{ width:100%; height:54px; position:fixed; top:0px; right:0px; background:url(../img/upcolors.png) right; }
+			  
+			  .scroll{ width:100%; height: calc(100% - 85px); position:absolute; top:20px;  overflow-x: hidden  ;  overflow-y: scroll;  -webkit-overflow-scrolling: touch; z-index:100; }
+			  
+			  .back-box{ width:100%; height:65px; position:absolute; bottom:0px; color:#FFF; pa }
+			  .back-box table{ width:90%; height:100%; margin-right:10px; margin-left:10px;}
+			  .back-title{ font-size:24px; }
+			  .back-icon{ font-size:30px; }
+			  
+			  .back-line{ width:100%; height:3px; background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(0,0,0,0.1) ,rgba(255,255,255,0)); }
+			  
 			  
 			 
 			  
 			  
+			 
+			  
+
+			  
+			  /***************** Inputs ***************/
+			  input, textarea,button{
+			  width:80%; max-width:320px; height:40px;
+			  display:block; margin-bottom:15px; 
+			  border:2px solid #FFF; border-radius:50px;
+			  background-color: rgba(255,255,255,0.1) ; color:#FFF; font-size:14px;
+			  padding:10px;
+			  
+			  }
+			  button{ height:60px;  font-size:18px; background-color: rgba(0,0,0,0.1) ; overflow: visible; } 
+			  select{
+			  height:60px; width:80%; max-width:340px;  padding:10px;
+			  display:block; margin-bottom:15px; 
+			  border:2px solid #FFF; border-radius:50px;
+			  background-color: rgba(255,255,255,0.1) ; color:#FFF; font-size:16px; 
+			   }
+			  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+			  color:    #fff;
+			  opacity: 0.5;
+			  }
+			  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			  color:    #fff;
+			  opacity: 0.5;
+			  }
+			  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+			  color:    #fff;
+			  opacity: 0.5;
+			  }
+			  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+			  color:    #fff;
+			  opacity: 0.5;
+			  
+			  }
+			  ::input-placeholder {
+			  color:    #fff;
+			  opacity: 0.5;
+			  }
+			  input#consult_text{ height:60px;  border-radius:60px;}
+			  
+			  input[type="date"]::before {
+	color: rgba(255,255,255,0.5) ;
+	
+	content: attr(placeholder);
+ }
+input[type="date"] {
+	color: rgba(255,255,255,1);
+ }
+input[type="date"]:focus,
+input[type="date"]:valid {
+	color: rgba(255,255,255,1);
+ }
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: " تاريخ الموعد " !important;
+}
+			  
+			  
+			  
+			  
+			  			  
 			  
 			  /************ Home *************/
-			  
-			  
-			  #home{   
-			  width: 100%; height:100%; 
-			  position:fixed; top:0px; right:0px;
-			  transform: scale(1,1) translate(0%,0%);
-			  z-index:10;
+			  #logo{ width:300px; height:300px; background-image:url(../img/logo.png) ; background-size:300px 300px; background-repeat:no-repeat; }
+ 
+			  .options-table{ width:80%; max-width:320px; text-align:center;}
+ 			  .options-table td{ text-align: center; }
+			  .options{
+			  width:80px; height:80px; 
+			  border:2px solid #fff; border-radius:100%; 
+			  margin:5px; background-color: rgba(255,255,255,0.9) ;
+			  overflow:hidden;
+			  color: #3e5360; text-align:center; text-shadow:none;
 			  }
+			  .options-icon{ margin-top:15px; font-size:25px; display:block; text-align:center;text-shadow:none; }
+			  .options-title{ font-size:16px; text-align:center;text-shadow:none;}
 			  
-			   
-			  
-			  .main-list{
-			  width:50%; height:25%; 
-			  position:absolute; z-index:1; 
-			  font-size:22px; color:#FFF; text-align:center;
-			  display:table-cell;
-			  vertical-align:middle;
-			  ruby-align:center;
-			  text-align:center;
-			   
-			  }
-			  .main-list-content{ position:relative; transform: translateY(-50%); top:50%; }
-			   
-			  .main-list-icons{ font-size:45px; font-weight:100;}
-			  .light-sun{ text-shadow: 0px 0px 30px #fff; }
-			  
-			  #main-list-logo{ width:220px; height:78px; background-image:url(../img/logo.png); background-size: 220px 78px; }
+			  .options img{ width:70px; height:70px; background:none; margin-top:6px;}
 			  
 			  
-			  #button-list-articles{ background-color:#e74c3c; top:10px; right:0%; }
-			  #button-list-versions{ background-color:#f39c12; top:10px; right:50%; }
-			  #button-list-logo{ background-color:#e6ebec; top:25%; right:-50%; width:200%; }
-			  #button-list-competent{ background-color:#0db392; top:50%; right:0%; }
-			  #button-list-about{ background-color:#2ecc71; top:50%; right:50%; }
-			  #button-list-ideas{ background-color:#1c2834; top:75%; right:-50%;  width:200%;}
 			  
-			  
-		 	  /************  lists *************/
+ 
 			 
-			 
-			 .content_title_lists_box{width:100%; height:75px; background-color:#FFF; position:fixed; top:-500px; opacity:0;  }
-			 .content_title_lists_word{ font-size:30px;100; color:#FF6657}
-			 
-			 .body_content_lists{
-			  width:100%; height:calc(100% - 140px ); 
-			  position:absolute; top:75px; opacity:0;
-			  overflow-y: scroll;  -webkit-overflow-scrolling: touch;    
-			  }
+			  /************ Artical Main *************/
+			  .main-articles-list{ width:80%; max-width:350px; height:60px;  margin-top:40px; display:block; }
+			  .main-articles-icon-title{ color:#FFF; font-size:24px;}
+			  .main-articles-icon-title-left{ text-align:right; padding-right: 30px; margin-left:30px; }
+			  .main-articles-icon-title-right{ text-align:left;padding-left: 30px;  margin-right:40px;}
+			  .main-articles-icon{width:100px; height:100px;border-radius: 100%;background:#fff; margin:-20px; color:#FFF; overflow:hidden; position:absolute; }
+			  .main-articles-icon img{ width:85px; height:85px; border-radius:100%; margin-top:8px;}
+			  .main-articles-icon-left{ margin-right:40px;   }
+			  .main-articles-icon-right{ margin-right:-140px; }
+			  
+ 			  
+			  
+			  
+			  /************ Artical Lists *************/
+
+
 			 .content_lists{
 			  width:90%; height:100px; text-align:center;
-			  color:#FFF; font-size:20px; 
-			  border-bottom:1px dashed rgba(255,255,255,0.4);
+			  color: #fff; font-size:20px; 
+			  border-bottom:1px dashed rgba(255,255,255,0.2);
  			   }
 			 .content_lists tr td{ }
 			 
-			 .content_lists_icon{font-size:30px; }
+			 .content_lists_icon{font-size:30px; text-shadow:none; }
 			 
-			
 			 
-			  #back-group-box{
-			  width:100%; height:75px;
-			  direction:ltr;
-			  opacity:0.98;
-			  position:fixed; bottom:0px; right:-100%;
-			   
 			  
-			  }
-			  #back-group-button{color:#FFF; font-size:45px; margin-left:10px;}
-			  
-			  
-			  /********* show articles **********/
+			   /********* Articles Show **********/
 			  .articles_info_box{
 			   width:100%; height:120px;
-			   position:fixed; top:-180px; z-index:3;
-			   background-color: #e74c3c;
+			   position:absolute; top:0px; z-index:3;
+			   
 			   color:#FFF; 
 			   }
-			   .articles_info_title{ font-size:18px; }
-			   .articles_info_back{ font-size:35px; font-weight:900; }
+			   .articles_info_title{ font-size:20px; }
+			   .articles_info_back{ font-size:25px; font-weight:900; }
 			   .articles_info_box td{ padding-right: 15px; padding-left: 15px;}
 			   
 			   .articles_fullcontent_body{
-			   width:90%; height:calc(100% - 190px); overflow-x: hidden  ;  overflow-y: scroll;  -webkit-overflow-scrolling: touch;
+			   width:90%; height:calc(100%); overflow-x: hidden  ;  overflow-y: scroll;  -webkit-overflow-scrolling: touch;
 			   padding:5%; direction:ltr;   
-			   position:absolute; top:150px;  text-align:center;
-			   text-align:justify ; font-size:19px;
-			   opacity:0; z-index:2;
-			   background: #FFF;
+			   position:absolute; top:120px;  text-align:center;
+			   text-align:justify ; font-size:14px;
+			   opacity:1; z-index:2;
+			   background: rgba(255,255,255,1);
 			   }
 			   .articles_fullcontent{
 			   text-align: justify;
@@ -233,46 +291,44 @@
 			   padding:10px;
 			   position:absolute; left:0px;
 			   }
-			  
- 			  
-			  
-			  
-			  /************ about *************/
+			   
+			   /*********** video ***********/
+			   .lnr-film-play{ font-size:70px; color:#fecd5e}
+			   
+			   
+			  /************* appbook ***********/
+			  .appbook_lists{
+			  width:90%; height:100px; text-align:center;
+			  color:#FFF; font-size:20px; 
+			  border-bottom:1px dashed rgba(255,255,255,0.2);
+			  padding:10px;
+			  }
+			  .appbook_content{ margin-bottom:150px; padding:10px;}
+			  .appbook_title{ font-size:28px; color: #f1c40f; display:block; text-shadow:none;}
+			  .appbook_text{ font-size:20px; color: #fff; text-align:justify; }
+	 
+			   
+			   /************* remind ***********/
+			   .remind_body{ width:80%; max-width: 320px; color:#FFF; font-size:20px;}
+			   .remind_body table{ width:100%;  }
+			   .remind_body table td{ padding-top:10px; padding-bottom:10px; border-top: 1px dashed #fff; }
+			   .remind_body img{ width:60px; height:60px; border:10px solid #fff; border-radius: 100%;}
+ 			   
+			   
+			   /************ about *************/
 			  .body_content_lists_about{
 			  width:100%; height:calc(100% - 140px ); 
 			  position:absolute; top:75px;  
 			  overflow-y: scroll;  -webkit-overflow-scrolling: touch; 
-			  opacity:0;
+			  opacity:1;
 			  } 
 			  #about_logo{ width:255px; height:105px; background-image:  url(../img/about_logo.png); background-size:255px 105px; }
-			  .about_line{ width:100%; height:1px; border-bottom: 1px dashed rgba(255,255,255,0.5); margin-top:15px; margin-bottom:15px;}
-			  #about_content{ width:80%;   color:#FFF; font-family:'Changa'; font-size:18px; text-align:justify; }
+			  .about_title{color: #77ffc7; display:block; font-size:28px;}
+			  .about_line{ width:100%; height:1px; border-bottom: 1px dashed rgba(255,255,255,0.2) ; margin-top:15px; margin-bottom:15px;}
+			  #about_content{ width:80%;   color: #fff; text-shadow:none;font-size:22px; text-align:justify; }
 			  .secial-icons{ font-size:27px; margin:10px;}
 			  #jasr_logo{width:160px; height:82px; background-image:url(../img/jasr_logo.png); background-size:160px 82px;}
-			  
-			  
-			  
-			  /************ ideas *************/
-			 .ideas_lists{
-			  width:90%; height:100px; text-align:center;
-			  color:#FFF; font-size:20px; 
-			  }
-			  .ideas_content{ margin-bottom:150px;}
-			  .ideas_title{ font-size:25px; color: #FC0; display:block;}
-			  .ideas_text{ font-size:17px; text-align:justify; }
-			  .ideas_line{
-			   width:90%; height:1px; 
-			   background: #1e2f3f; border-bottom:1px solid #15202a; 
-			   margin-top:10px; margin-bottom:10px; }
 			   
-
-			  
-			   
-
-
-			  
-			  
-			  
 			  
 			  
 			  
